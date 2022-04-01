@@ -6,7 +6,7 @@ pipeline {
     stages {
         stage('Git SCM') {
             steps {
-                git 'https://github.com/sureshguvva/jenkins-iac-kubernetes.git'
+                git 'https://github.com/sureshguvva/pets.git'
             }
         }
         stage('Build Application') { 
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 echo '=== Building Petclinic Docker Image ==='
                 script {
-                    app = docker.build("yellaiah225/demo")
+                    app = docker.build("sureshguvva/pets")
                 }
             }
         }
@@ -65,8 +65,8 @@ pipeline {
         stage('Remove local images') {
             steps {
                 echo '=== Delete the local docker images ==='
-                sh("docker rmi -f yellaiah225/demo:latest || :")
-                sh("docker rmi -f yellaiah225/demo:$SHORT_COMMIT || :")
+                sh("docker rmi -f sureshguvva/pets:latest || :")
+                sh("docker rmi -f sureshguvva/pets:$SHORT_COMMIT || :")
             }
         }
     }
