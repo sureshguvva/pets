@@ -1,0 +1,5 @@
+we need to remove the when condition in the docker build then after the we need to excute the script 
+
+when {
+                branch 'master'
+            }
