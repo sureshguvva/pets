@@ -27,9 +27,7 @@ pipeline {
             }
         }
         stage('Build Docker Image') {
-            when {
-                branch 'master'
-            }
+            
             steps {
                 echo '=== Building Petclinic Docker Image ==='
                 script {
@@ -38,9 +36,7 @@ pipeline {
             }
         }
         stage('Push Docker Image') {
-            when {
-                branch 'master'
-            }
+           
             steps {
                 echo '=== Pushing Petclinic Docker Image ==='
                 script {
