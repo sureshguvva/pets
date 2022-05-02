@@ -53,7 +53,7 @@ pipeline {
             steps {
                 kubernetesDeploy(
                     configs: 'kubernetes/petclinic.yaml',
-                    kubeconfigId: 'K8s',
+                    kubeconfigId: 'kubernetes',
                     enableConfigSubstitution: true
                     ) 
             }
